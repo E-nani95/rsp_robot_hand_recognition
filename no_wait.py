@@ -4,7 +4,7 @@ import math
 # -----------------------------------------------------------
 # [설정] 로봇 IP와 포트
 # -----------------------------------------------------------
-ROBOT_IP = "192.168.0.31"
+#ROBOT_IP = "192.168.0.31"
 PORT = 30002
 
 # -----------------------------------------------------------
@@ -16,7 +16,7 @@ PORT = 30002
 # deg_values = [-40.96, -86.23, -80.11, -91.88, 81.98, -7.28]
 # waypoint_s = [math.radians(d) for d in deg_values]
 
-def move_robot(deg_values):
+def move_robot(deg_values, ROBOT_IP):
     print(f"[{ROBOT_IP}:{PORT}] 로봇 이동 명령 연결 시도...")
     waypoint_s = [math.radians(d) for d in deg_values]
     sock = None

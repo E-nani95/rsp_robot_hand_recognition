@@ -62,21 +62,29 @@ with mp_hands.Hands(
             print(f"바위(1): {poss[0][1] * 100:.1f}%")
             print(f"보  (2): {poss[0][2] * 100:.1f}%")
             print("-" * 20)
-
+            ip_1 = "192.168.0.31"
+            ip_2 = "192.168.0.32"
             # 로봇이 확실할때만 움직이라고 설정 <- 안정성때문에
             if conf > 0.8:
                 if result == 0:
                     print("Final_Result: 가위")
-                    deg_values = [-46.20, -127.82, -22.93, -3.65, 85.72, -11.86]
-                    move_robot(deg_values)
+                    deg_values_1 = [-40.96, -86.11, -6.61, -91.87, 81.98, -7.28]
+                    deg_values_2 = [50.78, -97.04, 20.88, -106.91, -95.23, -184.14]
+
+                    move_robot(deg_values_1,ip_1)
+                    move_robot(deg_values_2,ip_2)
                 elif result == 1:
                     print("Final_Result: 바위")
-                    deg_values = [-40.96, -86.23, -80.11, -91.88, 81.98, -7.28]
-                    move_robot(deg_values)
+                    deg_values_1 = [-43.20, -66.50, -86.76, -171.44, 96.23, 1.42]
+                    deg_values_2 = [40.75, -136.46, 89.05, -14.58, -99.71, -177.51]
+                    move_robot(deg_values_1,ip_1)
+                    move_robot(deg_values_2,ip_2)
                 elif result == 2:
                     print("Final_Result: 보")
-                    deg_values = [-46.21, -87.65, -22.90, -76.80, 85.72, -11.86]
-                    move_robot(deg_values)
+                    deg_values_1 = [-136.76, -62.32, -86.71, -81.66, 96.23, 1.41]
+                    deg_values_2 = [140.09, -126.54, 88.57, -86.22, -99.35, -177.51]
+                    move_robot(deg_values_1,ip_1)
+                    move_robot(deg_values_2,ip_2) 
 
 
 
